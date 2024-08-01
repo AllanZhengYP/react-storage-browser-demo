@@ -1,0 +1,64 @@
+{
+  "auth": {
+    "user_pool_id": "us-east-2_tsfVXjaIX",
+    "aws_region": "us-east-2",
+    "user_pool_client_id": "55e6uf5i9isbdkfh09pn10vs3j",
+    "identity_pool_id": "us-east-2:794deb43-1a96-43a4-b29c-41806e1b9e22",
+    "mfa_methods": [],
+    "standard_required_attributes": [
+      "email"
+    ],
+    "username_attributes": [
+      "email"
+    ],
+    "user_verification_types": [
+      "email"
+    ],
+    "mfa_configuration": "NONE",
+    "password_policy": {
+      "min_length": 8,
+      "require_lowercase": true,
+      "require_numbers": true,
+      "require_symbols": true,
+      "require_uppercase": true
+    },
+    "unauthenticated_identities_enabled": true
+  },
+  "data": {
+    "url": "https://ze634472hvfppllx5lhsdcy6yy.appsync-api.us-east-2.amazonaws.com/graphql",
+    "aws_region": "us-east-2",
+    "api_key": "da2-jy4q2raudzgbtoqp7wcjbskp6y",
+    "default_authorization_type": "API_KEY",
+    "authorization_types": [
+      "AMAZON_COGNITO_USER_POOLS",
+      "AWS_IAM"
+    ],
+    "model_introspection": {
+      "version": 1,
+      "models": {},
+      "enums": {},
+      "nonModels": {},
+      "queries": {
+        "oidc": {
+          "name": "oidc",
+          "isArray": false,
+          "type": "String",
+          "isRequired": false,
+          "arguments": {
+            "idToken": {
+              "name": "idToken",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "version": "1",
+  "storage": {
+    "aws_region": "us-east-2",
+    "bucket_name": "ashwin-portcullis-test1"
+  }
+}

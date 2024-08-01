@@ -1,52 +1,68 @@
-import { signIn } from "./utils/auth0";
-import { tokenStore } from "./utils/tokenStore";
+import { generateClient } from 'aws-amplify/api';
+import type { Schema } from '../amplify/data/resource';
+import { useCallback } from 'react';
+import { createStorageBrowser } from '@aws-amplify/ui-react-storage';
+import '@aws-amplify/ui-react-storage/storage-browser-styles.css'
+import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react';
+import { createManagedAuthConfigAdapter } from '@aws-amplify/storage/storage-browser';
 
-const fetchIdcCredentials = async (token: string) => {
-  try {
-    const response = await fetch(
-      "https://2zxpt9ie29.execute-api.us-east-2.amazonaws.com/v1/get-creds",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ token }),
-      }
-    );
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
+const {
+  VITE_ACCOUNT_ID,
+  VITE_REGION
+} = import.meta.env;
 
-    const data = await response.json();
-    const body = await JSON.parse(data.body);
-    return body.Credentials;
-  } catch (error) {
-    console.error("Error fetching credentials:", error);
-  }
-};
-
-const signInBtnClick = async () => {
-  const idToken = await signIn("ashwinkumar2468@gmail.com", "Ashwinkumar@123");
-  console.log("idToken", idToken);
-  if (idToken) {
-    const creds = await fetchIdcCredentials(idToken);
-    console.log("creds", creds);
-    tokenStore.storeTokens(creds);
-  }
-};
-
-const signOutBtnClick = async () => {
-  tokenStore.clearTokens();
-};
+const oidcClient = generateClient<Schema>();
 
 function App() {
+  const { isAuthenticated, getIdTokenClaims } = useAuth0();
+
+  const credentialsProvider = useCallback(async () => {
+    if (!isAuthenticated) {
+      return { 
+        credentials: {
+          accessKeyId: 'invalid key',
+          secretAccessKey: 'invalid secret',
+          sessionToken: 'invalid token',
+          expiration: new Date(),
+        } as any
+      }
+    }
+    const claims = await getIdTokenClaims();
+    const { data, errors } = await oidcClient.queries.oidc({
+      idToken: claims?.__raw!
+    }, { authMode: 'apiKey' });
+    if (errors?.length) {
+      throw new Error(JSON.stringify(errors[0].errorInfo));
+    }
+    const {
+      AccessKeyId,
+      SecretAccessKey,
+      SessionToken,
+      Expiration,
+    } = JSON.parse(data!);
+    const baseCreds = {
+      accessKeyId: AccessKeyId,
+      secretAccessKey: SecretAccessKey,
+      sessionToken: SessionToken,
+      expiration: new Date(Expiration)
+    }
+    return { credentials: baseCreds }
+  }, [isAuthenticated, getIdTokenClaims]);
+
+  const adapter = createManagedAuthConfigAdapter({
+    accountId: VITE_ACCOUNT_ID,
+    region: VITE_REGION,
+    credentialsProvider
+  });
+  const { StorageBrowser } = createStorageBrowser({config: adapter});
+
   return (
     <>
-      <div>Login Page</div>
-      <button onClick={() => signInBtnClick()}>SignIn</button>
-      <button onClick={() => signOutBtnClick()}>SignOut</button>
+      <StorageBrowser />
     </>
   );
 }
 
-export default App;
+export default withAuthenticationRequired(App, {
+  onRedirecting: () => <div>Redirecting you to the login page...</div>
+});
