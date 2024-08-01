@@ -18,14 +18,7 @@ function App() {
 
   const credentialsProvider = useCallback(async () => {
     if (!isAuthenticated) {
-      return { 
-        credentials: {
-          accessKeyId: 'invalid key',
-          secretAccessKey: 'invalid secret',
-          sessionToken: 'invalid token',
-          expiration: new Date(),
-        } as any
-      }
+      throw new Error('Not Authenticated');
     }
     const claims = await getIdTokenClaims();
     const { data, errors } = await oidcClient.queries.oidc({
