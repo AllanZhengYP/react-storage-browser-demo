@@ -31,6 +31,10 @@ class Auth {
      }
   }
 
+  public async handleRedirectCallback(): Promise<void> {
+    await this._auth0Client.handleRedirectCallback();
+  }
+
   public async logout(): Promise<void> {
     await this._auth0Client.logout();
     //TODO: update auth state

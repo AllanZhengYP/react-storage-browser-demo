@@ -26,31 +26,45 @@ function App() {
     checkAuthenticated();
   });
 
-  console.info('authenticated', authenticated);
+  console.info("authenticated", authenticated);
 
   return (
     <>
-      <header>
+      <header className="bg-blue-400 flex flex-row">
         {authenticated ? (
-          <h2>{alias}</h2>
+          <div className="grow px-4 py-4">
+            <h2>{alias}</h2>
+          </div>
         ) : (
           <button
+            className="bg-transparent"
             onClick={() => {
               Auth.loginWithPopup();
             }}
           >
-            Log in
+            <div className="content-center">
+              <b>Log in</b>
+            </div>
           </button>
         )}
         {authenticated && (
-          <button onClick={async () => { 
-            setAuthenticated(false);
-            setAlias('');
-            await Auth.logout();
-          }}>Log out</button>
+          <button
+            className="bg-transparent"
+            onClick={async () => {
+              setAuthenticated(false);
+              setAlias("");
+              await Auth.logout();
+            }}
+          >
+            <b>Log out</b>
+          </button>
         )}
       </header>
-      <body>{authenticated ? <StorageBrowser /> : <p>Please log in</p>}</body>
+      <div className="flex flex-row justify-center">
+        <div className="p-4">
+          {authenticated ? <StorageBrowser /> : <p>Please log in, or refresh the page if you just logged in.</p>}
+        </div>
+      </div>
     </>
   );
 }
