@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import StorageBrowser from "./components/StorageBrowser";
 import Auth from "./utils/AuthClass";
-import "@aws-amplify/ui-react-storage/storage-browser-styles.css";
+import '@aws-amplify/ui-react-storage/storage-browser-styles.css';
+import '@aws-amplify/ui-react-storage/styles.css';
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -32,14 +33,15 @@ function App() {
     <>
       <header className="bg-blue-400 flex flex-row">
         {authenticated ? (
-          <div className="grow px-4 py-4">
+          <div className="grow p-4">
             <h2>{alias}</h2>
           </div>
         ) : (
           <button
             className="bg-transparent"
-            onClick={() => {
-              Auth.loginWithPopup();
+            onClick={async () => {
+              await Auth.loginWithPopup();
+              window.location.reload();
             }}
           >
             <div className="content-center">
@@ -61,9 +63,7 @@ function App() {
         )}
       </header>
       <div className="flex flex-row justify-center">
-        <div className="p-4">
-          {authenticated ? <StorageBrowser /> : <p>Please log in, or refresh the page if you just logged in.</p>}
-        </div>
+        {authenticated ? <StorageBrowser /> : <p className="p-4">Please log in.</p>}
       </div>
     </>
   );

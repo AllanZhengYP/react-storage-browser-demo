@@ -7,6 +7,7 @@ const {
 
 class Auth {
   private _auth0Client: Auth0Client
+  private _authStateChangeCallback: () => void = () => {};
 
   constructor() {
     this._auth0Client = new Auth0Client({
@@ -20,8 +21,13 @@ class Auth {
   }
 
   public async loginWithPopup(): Promise<void> {
+    // this._authStateChangeCallback();
     try {
-      await this._auth0Client.loginWithPopup();
+      await this._auth0Client.loginWithPopup({
+        authorizationParams: {
+          redirect_uri: window.location.origin
+        }
+      });
      } catch(e) {
       if (e instanceof PopupCancelledError) {
         // Popup was closed before login completed
@@ -32,12 +38,16 @@ class Auth {
   }
 
   public async handleRedirectCallback(): Promise<void> {
-    await this._auth0Client.handleRedirectCallback();
+    const { appState } = await this._auth0Client.handleRedirectCallback();
+    console.log('login redirect. auth state change cb', appState, this._authStateChangeCallback);
+    this._authStateChangeCallback();
+
   }
 
   public async logout(): Promise<void> {
+    this._authStateChangeCallback();
     await this._auth0Client.logout();
-    //TODO: update auth state
+    console.log('logout. auth state change cb', this._authStateChangeCallback);
   }
 
   public async checkSession(): Promise<void> {
@@ -58,8 +68,8 @@ class Auth {
     return idToken;
   }
 
-  public onAuthStateChanged(): void {
-    // TODO
+  public addAuthStateChangeListener(cb: () => void): void {
+    this._authStateChangeCallback = cb;
   }
 }
 
