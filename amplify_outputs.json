@@ -56,9 +56,9 @@
       }
     }
   },
-  "version": "1",
   "storage": {
     "aws_region": "us-east-2",
-    "bucket_name": "ashwin-portcullis-test1"
-  }
+    "bucket_name": "amplify-reactstoragebrows-amplifyauthmanagedbucket-yjlmczvlavrc"
+  },
+  "version": "1"
 }

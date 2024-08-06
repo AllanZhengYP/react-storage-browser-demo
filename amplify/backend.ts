@@ -2,6 +2,7 @@ import { defineBackend } from '@aws-amplify/backend';
 import { auth } from './auth/resource';
 import { oidc } from './functions/oidc/resource';
 import { data } from './data/resource';
+import { storage } from './storage/resource';
 import * as iam from 'aws-cdk-lib/aws-iam';
 
 /**
@@ -11,14 +12,16 @@ const backend = defineBackend({
   auth,
   data,
   oidc,
+  storage, // Comment this for S3 managed auth use case.
 });
 
-backend.addOutput({
-  storage: {
-    aws_region: 'us-east-2',
-    bucket_name: 'ashwin-portcullis-test1'
-  },
-});
+// // Uncomment this for S3 managed auth use case.
+// backend.addOutput({
+//   storage: {
+//     aws_region: 'us-east-2',
+//     bucket_name: 'ashwin-portcullis-test1'
+//   },
+// });
 
 backend.oidc.resources.lambda.addToRolePolicy(new iam.PolicyStatement({
   sid: 'PortcullisAssumeRolePolicy',
