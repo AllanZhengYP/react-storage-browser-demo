@@ -7,9 +7,9 @@ Amplify.configure(amplifyConfig);
 const amplifyAuthAdapter = createAmplifyAuthAdapter({
   options: {
     defaultPrefixes: [
-      'public',
-      'protected',
-      'private'
+      'public/',
+      'protected/',
+      'private/'
     ]
   }
 })
