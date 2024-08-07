@@ -17,6 +17,7 @@ const oidcClient = generateClient<Schema>();
 
 const fetchBaseCredentials = async (): Promise<CredentialsProviderOutput> => {
   const { __raw } = await Auth.getIdToken();
+  throw new Error('fake error');
   const { data, errors } = await oidcClient.queries.oidc({
     idToken: __raw
   }, { authMode: 'apiKey' });
