@@ -853,35 +853,35 @@
     fast-xml-parser "^4.2.5"
     tslib "^2.5.0"
 
-"@aws-amplify/ui-react-core@0.0.0-storage-browser-debbf63-20240805211025":
-  version "0.0.0-storage-browser-debbf63-20240805211025"
-  resolved "https://registry.yarnpkg.com/@aws-amplify/ui-react-core/-/ui-react-core-0.0.0-storage-browser-debbf63-20240805211025.tgz#63f0de08bbab7c487d48708b9546c998c7a25f18"
-  integrity sha512-3LaK+qAgvO3jgNN7KlZqg8xGZgiDFAvAHYPgLVFw6GaoXtTZDx8WQHehxb554kcN9EtVbreNREFEtocAsMBgGA==
+"@aws-amplify/ui-react-core@0.0.0-storage-browser-ca42424-20240807030418":
+  version "0.0.0-storage-browser-ca42424-20240807030418"
+  resolved "https://registry.yarnpkg.com/@aws-amplify/ui-react-core/-/ui-react-core-0.0.0-storage-browser-ca42424-20240807030418.tgz#86877fa0c9fa7996def65b8038e2d73cee4e4938"
+  integrity sha512-Ij7jZgFOgKP0Ajl+6tEwuclPfLq1eS7ytvvzYW5wDNzMDfgATHJVbo18xH/nupD2VbF6OW7nrwlEnfozicOHTA==
   dependencies:
-    "@aws-amplify/ui" "0.0.0-storage-browser-debbf63-20240805211025"
+    "@aws-amplify/ui" "0.0.0-storage-browser-ca42424-20240807030418"
     "@xstate/react" "^3.2.2"
     lodash "4.17.21"
     react-hook-form "^7.43.5"
     xstate "^4.33.6"
 
 "@aws-amplify/ui-react-storage@storage-browser":
-  version "0.0.0-storage-browser-debbf63-20240805211025"
-  resolved "https://registry.yarnpkg.com/@aws-amplify/ui-react-storage/-/ui-react-storage-0.0.0-storage-browser-debbf63-20240805211025.tgz#257556986550d5f97c1db4e4cbf92f50897258c2"
-  integrity sha512-PpyyEfV5fAVyig81aCOY8xTofK4fi2WCTTmlwCQhTpPJz3Fd8ZSfy9qmV5K8GmRK9KzIN+s2NdVg4KKR9zM9WQ==
+  version "0.0.0-storage-browser-ca42424-20240807030418"
+  resolved "https://registry.yarnpkg.com/@aws-amplify/ui-react-storage/-/ui-react-storage-0.0.0-storage-browser-ca42424-20240807030418.tgz#e7db7a7c1d81300c3a1df4d0b5b0d671d8723bb2"
+  integrity sha512-sflCVvQ7OtGGawoyTd27jWX588+N4Rrw3bQr24Y71FyRGpydj9xzWLSABaJuZvwMfHTcltg5ZfTCRJVfPap94Q==
   dependencies:
-    "@aws-amplify/ui" "0.0.0-storage-browser-debbf63-20240805211025"
-    "@aws-amplify/ui-react" "0.0.0-storage-browser-debbf63-20240805211025"
-    "@aws-amplify/ui-react-core" "0.0.0-storage-browser-debbf63-20240805211025"
+    "@aws-amplify/ui" "0.0.0-storage-browser-ca42424-20240807030418"
+    "@aws-amplify/ui-react" "0.0.0-storage-browser-ca42424-20240807030418"
+    "@aws-amplify/ui-react-core" "0.0.0-storage-browser-ca42424-20240807030418"
     lodash "4.17.21"
     tslib "^2.5.2"
 
-"@aws-amplify/ui-react@0.0.0-storage-browser-debbf63-20240805211025", "@aws-amplify/ui-react@storage-browser":
-  version "0.0.0-storage-browser-debbf63-20240805211025"
-  resolved "https://registry.yarnpkg.com/@aws-amplify/ui-react/-/ui-react-0.0.0-storage-browser-debbf63-20240805211025.tgz#d91732a7c89822008ee596907f4679e93e82fa48"
-  integrity sha512-4PSIFQ9RJA2cINc98M0iWrvfZrSw1VH/A6NTnJat2PpLZ+I2D1BIg+scRldccwx8YTgZ0fIC1VpFPjiXRvSn4w==
+"@aws-amplify/ui-react@0.0.0-storage-browser-ca42424-20240807030418", "@aws-amplify/ui-react@storage-browser":
+  version "0.0.0-storage-browser-ca42424-20240807030418"
+  resolved "https://registry.yarnpkg.com/@aws-amplify/ui-react/-/ui-react-0.0.0-storage-browser-ca42424-20240807030418.tgz#a9bb770f5c4aba03464560abae3cc02b5e8b2ada"
+  integrity sha512-6I0FzuW3XjsK2seNW00+TZ5XW1DGTT2XFAu+lWD7ApNc4AR1ra31WA3MAOOh+dUhbRCfKBilyhwdQwCcvhjZwA==
   dependencies:
-    "@aws-amplify/ui" "0.0.0-storage-browser-debbf63-20240805211025"
-    "@aws-amplify/ui-react-core" "0.0.0-storage-browser-debbf63-20240805211025"
+    "@aws-amplify/ui" "0.0.0-storage-browser-ca42424-20240807030418"
+    "@aws-amplify/ui-react-core" "0.0.0-storage-browser-ca42424-20240807030418"
     "@radix-ui/react-direction" "1.0.0"
     "@radix-ui/react-dropdown-menu" "1.0.0"
     "@radix-ui/react-slider" "1.0.0"
@@ -890,10 +890,10 @@
     qrcode "1.5.0"
     tslib "^2.5.2"
 
-"@aws-amplify/ui@0.0.0-storage-browser-debbf63-20240805211025":
-  version "0.0.0-storage-browser-debbf63-20240805211025"
-  resolved "https://registry.yarnpkg.com/@aws-amplify/ui/-/ui-0.0.0-storage-browser-debbf63-20240805211025.tgz#21cc3da7ceba6e88f57e1747cec96cb395b698d0"
-  integrity sha512-lGEgnKFkDHWRVTs6IWbuXZHQNuKzNgQaydk89NSI175Z8PPiJWKJUoKCccEQC9WsfMc1+Mmqb0ZJN5XsAkg1Sw==
+"@aws-amplify/ui@0.0.0-storage-browser-ca42424-20240807030418":
+  version "0.0.0-storage-browser-ca42424-20240807030418"
+  resolved "https://registry.yarnpkg.com/@aws-amplify/ui/-/ui-0.0.0-storage-browser-ca42424-20240807030418.tgz#46dce1cab4967ff4372abbd0e61798c07ba4e182"
+  integrity sha512-LelCWVABhghFtnH4+XzU+oCQl8PsIIoyvi2BHZg06V5CWuI2dxh1OFCpkr+qbqA8gvSZ827lkuNrxYf/BgQr5g==
   dependencies:
     csstype "^3.1.1"
     lodash "4.17.21"
@@ -4537,9 +4537,9 @@
     value-or-promise "^1.0.12"
 
 "@graphql-tools/utils@^10.0.0", "@graphql-tools/utils@^10.0.13", "@graphql-tools/utils@^10.2.1":
-  version "10.3.3"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-10.3.3.tgz#506ff99cb231bf83df6277f79e4860adc3aedf7b"
-  integrity sha512-p0zCctE+kXsXb5FCJmA3DoucQmB5eSkrtyBAaEcjbnz8OVbriSJx2WNEyzttiHv2qanBe/AK/YiyHD/5Nsj76Q==
+  version "10.3.4"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-10.3.4.tgz#676e76e759893192a309719e21735a49f28169d5"
+  integrity sha512-5xUXVsp1Yh1ttYHYDLJscoyv2LcW1BjpbcooIAkGUzINftD/qRBw9zvVmALx+oQWr/9MSIYghHHZzbYHsVO0/A==
   dependencies:
     "@graphql-typed-document-node/core" "^3.1.1"
     cross-inspect "1.0.1"
@@ -6148,9 +6148,9 @@
     tslib "^2.6.2"
 
 "@types/aws-lambda@^8.10.134":
-  version "8.10.142"
-  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.142.tgz#cb1d90bc45095e4f59e4ddfbb34a2e29c28d66b4"
-  integrity sha512-wy2y/2hQKrS6myOS++koXg3N1Hg+LLyPjaggCFajczSHZPqBnOMuT2sdH3kiASrmdBYyM3pmjyz5SoWraRllCQ==
+  version "8.10.143"
+  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.143.tgz#383693fbaadc6994a71d64a7c09e8c244fad8dff"
+  integrity sha512-u5vzlcR14ge/4pMTTMDQr3MF0wEe38B2F9o84uC4F43vN5DGTy63npRrB6jQhyt+C0lGv4ZfiRcRkqJoZuPnmg==
 
 "@types/babel__core@^7.20.5":
   version "7.20.5"
@@ -6815,9 +6815,9 @@ camelcase@^5.0.0:
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
 
 caniuse-lite@^1.0.30001646:
-  version "1.0.30001649"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001649.tgz#3ec700309ca0da2b0d3d5fb03c411b191761c992"
-  integrity sha512-fJegqZZ0ZX8HOWr6rcafGr72+xcgJKI9oWfDW5DrD7ExUtgZC7a7R7ZYmZqplh7XDocFdGeIFn7roAxhOeYrPQ==
+  version "1.0.30001650"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001650.tgz#dd1eba0938e39536d184c3c99b2569a13788bc16"
+  integrity sha512-fgEc7hP/LB7iicdXHUI9VsBsMZmUmlVJeQP2qqQW+3lkqVhbmjEU8zp+h5stWeilX+G7uXuIUIIlWlDw9jdt8g==
 
 capital-case@^1.0.4:
   version "1.0.4"
@@ -7305,9 +7305,9 @@ ecdsa-sig-formatter@1.0.11:
     safe-buffer "^5.0.1"
 
 electron-to-chromium@^1.5.4:
-  version "1.5.4"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.4.tgz#cd477c830dd6fca41fbd5465c1ff6ce08ac22343"
-  integrity sha512-orzA81VqLyIGUEA77YkVA1D+N+nNfl2isJVjjmOyrlxuooZ19ynb+dOlaDTqd/idKRS9lDCSBmtzM+kyCsMnkA==
+  version "1.5.5"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.5.tgz#03bfdf422bdd2c05ee2657efedde21264a1a566b"
+  integrity sha512-QR7/A7ZkMS8tZuoftC/jfqNkZLQO779SSW3YuZHP4eXpj3EffGLFcB/Xu9AAZQzLccTiCV+EmUo3ha4mQ9wnlA==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -9456,10 +9456,10 @@ postcss-value-parser@^4.0.0, postcss-value-parser@^4.2.0:
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz#723c09920836ba6d3e5af019f92bc0971c02e514"
   integrity sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==
 
-postcss@^8.4.23, postcss@^8.4.39, postcss@^8.4.40:
-  version "8.4.40"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.40.tgz#eb81f2a4dd7668ed869a6db25999e02e9ad909d8"
-  integrity sha512-YF2kKIUzAofPMpfH6hOi2cGnv/HrUlfucspc7pDyvv7kGdqXrfj8SCl/t8owkEgKEuu8ZcRjSOxFxVLqwChZ2Q==
+postcss@^8.4.23, postcss@^8.4.40:
+  version "8.4.41"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.41.tgz#d6104d3ba272d882fe18fc07d15dc2da62fa2681"
+  integrity sha512-TesUflQ0WKZqAvg52PWL6kHgLKP6xB6heTOdoYM0Wt2UHyxNa4K25EZZMgKns3BH1RLVbZCREPpLY0rhnNoHVQ==
   dependencies:
     nanoid "^3.3.7"
     picocolors "^1.0.1"
@@ -10108,9 +10108,9 @@ table@^6.8.2:
     strip-ansi "^6.0.1"
 
 tailwindcss@^3.4.7:
-  version "3.4.7"
-  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-3.4.7.tgz#6092f18767f5933f59375b9afe558e592fc77201"
-  integrity sha512-rxWZbe87YJb4OcSopb7up2Ba4U82BoiSGUdoDr3Ydrg9ckxFS/YWsvhN323GMcddgU65QRy7JndC7ahhInhvlQ==
+  version "3.4.8"
+  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-3.4.8.tgz#74fdfc085732c244ad9ca4ee0d539bc5dddd58fd"
+  integrity sha512-GkP17r9GQkxgZ9FKHJQEnjJuKBcbFhMFzKu5slmN6NjlCuFnYJMQ8N4AZ6VrUyiRXlDtPKHkesuQ/MS913Nvdg==
   dependencies:
     "@alloc/quick-lru" "^5.2.0"
     arg "^5.0.2"
@@ -10491,12 +10491,12 @@ value-or-promise@^1.0.12:
   integrity sha512-Z6Uz+TYwEqE7ZN50gwn+1LCVo9ZVrpxRPOhOLnncYkY1ZzOYtrX8Fwf/rFktZ8R5mJms6EZf5TqNOMeZmnPq9Q==
 
 vite@^5.3.4:
-  version "5.3.5"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-5.3.5.tgz#b847f846fb2b6cb6f6f4ed50a830186138cb83d8"
-  integrity sha512-MdjglKR6AQXQb9JGiS7Rc2wC6uMjcm7Go/NHNO63EwiJXfuk9PgqiP/n5IDJCziMkfw9n4Ubp7lttNwz+8ZVKA==
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-5.4.0.tgz#11dca8a961369ba8b5cae42d068c7ad684d5370f"
+  integrity sha512-5xokfMX0PIiwCMCMb9ZJcMyh5wbBun0zUzKib+L65vAZ8GY9ePZMXxFrHbr/Kyll2+LSCY7xtERPpxkBDKngwg==
   dependencies:
     esbuild "^0.21.3"
-    postcss "^8.4.39"
+    postcss "^8.4.40"
     rollup "^4.13.0"
   optionalDependencies:
     fsevents "~2.3.3"
