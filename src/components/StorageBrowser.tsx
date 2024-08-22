@@ -1,8 +1,9 @@
-import { createStorageBrowser } from "@aws-amplify/ui-react-storage"
+import { createStorageBrowser, elementsDefault } from "@aws-amplify/ui-react-storage"
 import managedAuthAdapter from "../utils/s3ManagedAuthAdapter"
 
 const { StorageBrowser } = createStorageBrowser({
-  config: managedAuthAdapter
-}) as unknown as { StorageBrowser: () => React.JSX.Element; }
+  config: managedAuthAdapter,
+  elements: elementsDefault
+});
 
 export default StorageBrowser;

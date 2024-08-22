@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import StorageBrowser from "./components/StorageBrowser";
 import Auth from "./utils/AuthClass";
-import '@aws-amplify/ui-react-storage/storage-browser-styles.css';
 import '@aws-amplify/ui-react-storage/styles.css';
+import '@aws-amplify/ui-react-storage/storage-browser-styles.css';
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -63,7 +63,9 @@ function App() {
         )}
       </header>
       <div className="flex flex-row justify-center">
-        {authenticated ? <StorageBrowser /> : <p className="p-4">Please log in.</p>}
+        <div className="grow px-4">
+          {authenticated ? <StorageBrowser /> : <p className="p-4">Please log in.</p>}
+        </div>
       </div>
     </>
   );
