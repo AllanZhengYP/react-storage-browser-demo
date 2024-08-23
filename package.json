@@ -13,6 +13,7 @@
     "@auth0/auth0-react": "^2.2.4",
     "@auth0/auth0-spa-js": "^2.1.3",
     "@aws-amplify/storage": "storage-browser",
+    "@aws-amplify/ui": "storage-browser",
     "@aws-amplify/ui-react": "storage-browser",
     "@aws-amplify/ui-react-storage": "storage-browser",
     "@aws-sdk/client-sso-oidc": "^3.621.0",

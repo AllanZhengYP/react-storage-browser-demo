@@ -1,4 +1,4 @@
-import { createManagedAuthAdapter } from '@aws-amplify/ui-react-storage';
+import { createManagedAuthAdapter } from '@aws-amplify/ui-react-storage/browser';
 import { AwsCredentialIdentity } from '@aws-sdk/types';
 import { generateClient } from 'aws-amplify/api';
 import type { Schema } from '../../amplify/data/resource';
@@ -35,7 +35,7 @@ const fetchBaseCredentials = async (): Promise<CredentialsProviderOutput> => {
     sessionToken: SessionToken,
     expiration: new Date(Expiration)
   }
-  return { credentials: baseCreds }
+  return { credentials: baseCreds as any }
 
 }
 
