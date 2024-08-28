@@ -23,5 +23,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "amplify/data"]
+  "include": ["src", "amplify/data", "amplify/functions"]
 }

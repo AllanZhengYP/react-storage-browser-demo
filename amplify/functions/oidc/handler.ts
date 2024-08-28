@@ -9,7 +9,7 @@ const CLIENT_ID = 'arn:aws:sso::325800432239:application/ssoins-6684b7c55ac3a3fb
 const GRANT_TYPE = 'urn:ietf:params:oauth:grant-type:jwt-bearer';
 const BEARER_TOKEN_ROLE = 'arn:aws:iam::325800432239:role/storage-browser-Identity-bearer-ashwin'
 
-export const handler: Schema['oidc']['functionHandler'] = async (event, context) => {
+export const handler: Schema['oidc']['functionHandler'] = async (event) => {
   console.log('idToken: ', event.arguments.idToken);
   const ssoClient = new SSOOIDCClient({});
   const { idToken } = await ssoClient.send(new CreateTokenWithIAMCommand({
