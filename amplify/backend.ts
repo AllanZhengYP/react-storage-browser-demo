@@ -32,3 +32,38 @@ backend.oidc.resources.lambda.addToRolePolicy(new iam.PolicyStatement({
   actions: ['sso-oauth:CreateTokenWithIAM'],
   resources: ['*']
 }));
+
+const customResourcesStack = backend.createStack('CustomResources');
+
+const PortcullisOidcProvider = new iam.OpenIdConnectProvider(customResourcesStack, 'PortcullisOidcProvider', {
+  url: 'https://dev-y20cznetp5a7wzib.us.auth0.com',
+  clientIds: ['gEJvhYO3CVSVD7TOLWi9cb3GAWjuI981']
+});
+
+const idcTokenRoleForClientAssume = new iam.Role(customResourcesStack, 'IdcTokenRole', {
+  assumedBy: new iam.WebIdentityPrincipal('dev-y20cznetp5a7wzib.us.auth0.com'), // TODO: add conditions
+  inlinePolicies: {
+    'IdcTokenRolePolicy': new iam.PolicyDocument({
+      statements: [
+        new iam.PolicyStatement({
+          sid: 'PortcullisAssumeRolePolicy',
+          effect: iam.Effect.ALLOW,
+          actions: ['sts:AssumeRole', 'sts:SetContext'],
+          resources: ['arn:aws:iam::325800432239:role/storage-browser-Identity-bearer-ashwin']
+        }),
+        new iam.PolicyStatement({
+          sid: 'PortcullisCreateTokenWithIAMPolicy',
+          effect: iam.Effect.ALLOW,
+          actions: ['sso-oauth:CreateTokenWithIAM'],
+          resources: ['*']
+        })
+      ]
+    })
+  }
+});
+
+backend.addOutput({
+  custom: {
+    idcTokenRoleArn: idcTokenRoleForClientAssume.roleArn
+  }
+})
